@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Half-Birthday Scheduler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Half-Birthday Scheduler</h1>
+    <p>Schedule a happy half-birthday email for someone special!</p>
+
+    <!-- Form -->
+    <form name="half-birthday-form" method="POST" data-netlify="true" id="half-birthday-form">
+      <!-- Sender's Email -->
+      <label for="sender-email">Your Email (for CC):</label>
+      <input type="email" id="sender-email" name="sender-email" placeholder="Your email" required>
+
+      <!-- Recipient's Name -->
+      <label for="recipient-name">Recipient's Name:</label>
+      <input type="text" id="recipient-name" name="recipient-name" placeholder="Recipient's name" required>
+
+      <!-- Recipient's Email -->
+      <label for="recipient-email">Recipient's Email:</label>
+      <input type="email" id="recipient-email" name="recipient-email" placeholder="Recipient's email" required>
+
+      <!-- Date to Send -->
+      <label for="send-date">Date to Send:</label>
+      <input type="date" id="send-date" name="send-date" required>
+
+      <!-- Time Zone -->
+      <label for="timezone">Time Zone:</label>
+      <select id="timezone" name="timezone" required>
+        <option value="UTC">UTC</option>
+        <option value="America/New_York">America/New_York</option>
+        <option value="Europe/London">Europe/London</option>
+        <option value="Asia/Tokyo">Asia/Tokyo</option>
+        <option value="Australia/Sydney">Australia/Sydney</option>
+        <!-- Add more time zones as needed -->
+      </select>
+
+      <!-- Submit Button -->
+      <button type="submit">Schedule Email</button>
+    </form>
+
+    <!-- Success Message -->
+    <p id="success-message" style="display: none; color: green;">Your email has been scheduled successfully!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
