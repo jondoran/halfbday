@@ -7,47 +7,76 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Happy Half-Birthday Scheduler</h1>
-    <p>Schedule a happy half-birthday email for someone special!</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Celebrate Half-Birthdays in Style!</h1>
+      <p>Surprise your loved ones with a personalized email on their half-birthday. It's quick, simple, and free!</p>
+      <a href="#form-section" class="cta-button">Get Started</a>
+    </div>
+  </header>
 
-    <!-- Form -->
-    <form name="half-birthday-form" method="POST" data-netlify="true" id="half-birthday-form">
-      <input type="hidden" name="form-name" value="half-birthday-form">
-      <!-- Sender's Email -->
-      <label for="sender-email">Your Email (for CC):</label>
-      <input type="email" id="sender-email" name="sender-email" placeholder="Your email" required>
+  <main>
+    <section class="features">
+      <h2>Why Use Our Scheduler?</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Simple and Free</h3>
+          <p>No accounts, no hassle. Just fill out the form and we’ll handle the rest.</p>
+        </div>
+        <div class="feature">
+          <h3>Personalized Emails</h3>
+          <p>Include the recipient’s name and a special message to make their day extra special.</p>
+        </div>
+        <div class="feature">
+          <h3>Automated Scheduling</h3>
+          <p>Set it and forget it! We’ll send the email on the exact date you choose.</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Recipient's Name -->
-      <label for="recipient-name">Recipient's Name:</label>
-      <input type="text" id="recipient-name" name="recipient-name" placeholder="Recipient's name" required>
+    <section id="form-section" class="form-section">
+      <h2>Schedule a Half-Birthday Email</h2>
+      <p>Fill out the form below to schedule your half-birthday email. It only takes a minute!</p>
 
-      <!-- Recipient's Email -->
-      <label for="recipient-email">Recipient's Email:</label>
-      <input type="email" id="recipient-email" name="recipient-email" placeholder="Recipient's email" required>
+      <!-- Form -->
+      <form name="half-birthday-form" method="POST" data-netlify="true" id="half-birthday-form">
+        <input type="hidden" name="form-name" value="half-birthday-form">
 
-      <!-- Date to Send -->
-      <label for="send-date">Date to Send:</label>
-      <input type="date" id="send-date" name="send-date" required>
+        <!-- Sender's Email -->
+        <label for="sender-email">Your Email (for CC):</label>
+        <input type="email" id="sender-email" name="sender-email" placeholder="Your email" required>
 
-      <!-- Time Zone -->
-      <label for="timezone">Time Zone:</label>
-      <select id="timezone" name="timezone" required>
-        <option value="UTC">UTC</option>
-        <option value="America/New_York">America/New_York</option>
-        <option value="Europe/London">Europe/London</option>
-        <option value="Asia/Tokyo">Asia/Tokyo</option>
-        <option value="Australia/Sydney">Australia/Sydney</option>
-        <!-- Add more time zones as needed -->
-      </select>
+        <!-- Recipient's Name -->
+        <label for="recipient-name">Recipient's Name:</label>
+        <input type="text" id="recipient-name" name="recipient-name" placeholder="Recipient's name" required>
 
-      <!-- Submit Button -->
-      <button type="submit">Schedule Email</button>
-    </form>
+        <!-- Recipient's Email -->
+        <label for="recipient-email">Recipient's Email:</label>
+        <input type="email" id="recipient-email" name="recipient-email" placeholder="Recipient's email" required>
 
-    <!-- Success Message -->
-    <p id="success-message" style="display: none; color: green;">Your email has been scheduled successfully!</p>
-  </div>
+        <!-- Date to Send -->
+        <label for="send-date">Date to Send:</label>
+        <input type="date" id="send-date" name="send-date" required>
+
+        <!-- Time Zone -->
+        <label for="timezone">Time Zone:</label>
+        <select id="timezone" name="timezone" required>
+          <option value="UTC">UTC</option>
+          <option value="America/New_York">America/New_York</option>
+          <option value="Europe/London">Europe/London</option>
+          <option value="Asia/Tokyo">Asia/Tokyo</option>
+          <option value="Australia/Sydney">Australia/Sydney</option>
+        </select>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Schedule Email</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Happy Half-Birthday Scheduler. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
