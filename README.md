@@ -1,4 +1,4 @@
 # halfbday
 
-https://jondoran.github.io/halfbday
-https://halfbday.netlify.app/
+- https://jondoran.github.io/halfbday
+- https://halfbday.netlify.app/
