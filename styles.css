@@ -142,13 +142,46 @@ header {
     margin-bottom: 20px;
 }
 
+/* Two-Column Layout for Large Screens */
+@media (min-width: 768px) {
+    form {
+        display: grid; /* Use grid layout */
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 20px; /* Add spacing between columns */
+        align-items: start; /* Align items at the top */
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column; /* Stack labels and inputs vertically */
+    }
+
+    form button {
+        grid-column: span 2; /* Make the button span across both columns */
+        margin-top: 10px; /* Add spacing above the button */
+    }
+}
+
+/* Single-Column Layout for Small Screens */
+@media (max-width: 768px) {
+    form {
+        display: block; /* Revert to single-column layout on smaller screens */
+    }
+
+    #form {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    form button {
+        font-size: 0.9rem; /* Adjust button size for smaller screens */
+    }
+}
+
 /* Label Styling */
 form label {
     font-family: 'Rubik', sans-serif;
     font-size: 1rem;
     color: #333;
-    display: block; /* Ensure labels are on their own line */
-    text-align: left; /* Align labels to the left */
     margin-bottom: 5px;
 }
 
@@ -191,41 +224,6 @@ form button {
 form button:hover {
     background-color: #45a049; /* Slightly darker green on hover */
 }
-
-/* Two-Column Layout for Large Screens */
-@media (min-width: 768px) {
-    form {
-        display: grid; /* Use grid layout */
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 20px; /* Add spacing between columns */
-        align-items: start; /* Align items at the top */
-    }
-
-    form label {
-        text-align: left; /* Left-align labels in two-column layout */
-    }
-
-    form button {
-        grid-column: span 2; /* Make the button span across both columns */
-        margin-top: 10px; /* Add spacing above the button */
-    }
-}
-
-/* Add Responsive Design */
-@media (max-width: 768px) {
-    form {
-        display: block; /* Revert to single-column layout on smaller screens */
-    }
-
-    #form {
-        padding: 20px; /* Reduce padding on smaller screens */
-    }
-
-    form button {
-        font-size: 0.9rem; /* Adjust button size for smaller screens */
-    }
-}
-
 
 
 /* Footer */
