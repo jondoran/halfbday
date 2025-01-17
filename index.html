@@ -38,7 +38,6 @@
     <section id="features">
       <h2>Why Celebrate Half Birthdays?</h2>
       <div class="feature-list">
-        <!-- Feature 1 -->
         <div class="feature">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" fill="#4CAF50">
             <circle cx="50" cy="50" r="48" stroke="none" />
@@ -48,7 +47,6 @@
           <p>Half-birthdays are so insignificant, they’re hilarious. Let’s make them a thing.</p>
         </div>
 
-        <!-- Feature 2 -->
         <div class="feature">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" fill="#ff9800">
             <rect x="10" y="10" width="80" height="80" rx="15" />
@@ -58,7 +56,6 @@
           <p>It’s unexpected, it’s quirky, and it’s guaranteed to make someone smile.</p>
         </div>
 
-        <!-- Feature 3 -->
         <div class="feature">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" fill="#4CAF50">
             <rect x="10" y="10" width="80" height="80" rx="15" />
@@ -74,7 +71,6 @@
     <section id="song">
       <h2>🎵 Happy Half Birthday Song 🎵</h2>
       <p>Enjoy this fun song while you celebrate!</p>
-      <!-- Embedded Spotify Player -->
       <iframe src="https://open.spotify.com/embed/track/6rHF1P6L6XWdNmM8LeSR4Q" 
           width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" loading="lazy">
       </iframe>
@@ -103,6 +99,9 @@
 
           <label for="recipient-birthday">Recipient's Birthday:</label>
           <input type="date" id="recipient-birthday" name="recipient-birthday" required aria-describedby="date-error">
+
+          <label for="half-birthday">Recipient's Half-Birthday:</label>
+          <input type="text" id="half-birthday" name="half-birthday" readonly placeholder="Half-birthday will be calculated here">
         </div>
 
         <label for="timezone">Recipient's Time Zone:</label>
