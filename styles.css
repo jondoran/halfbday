@@ -1,6 +1,5 @@
 /* General Reset */
 
-/* Gradient with floating shapes */
 body {
     background: linear-gradient(135deg, #f9f9f9, #e3f2fd); /* Gradient background */
     font-family: 'Rubik', sans-serif;
@@ -12,31 +11,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-body::before,
-body::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.2; /* Make the shapes subtle */
-    z-index: -1; /* Place behind content */
-}
-
-body::before {
-    width: 300px;
-    height: 300px;
-    background: #4CAF50; /* Green circle */
-    top: 10%; /* Position 10% down from the top */
-    left: 10%; /* Position 10% from the left */
-}
-
-body::after {
-    width: 400px;
-    height: 400px;
-    background: #e3f2fd; /* Soft blue circle */
-    bottom: 10%; /* Position 10% up from the bottom */
-    right: 10%; /* Position 10% from the right */
-}
-
+/* Circle Shapes */
 .shape {
     position: absolute;
     border-radius: 50%;
@@ -46,34 +21,30 @@ body::after {
 }
 
 .shape-1 {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     background: #4CAF50; /* Green */
     top: 10%;
-    left: 20%;
+    left: 10%;
 }
 
 .shape-2 {
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 400px;
     background: #e3f2fd; /* Soft blue */
-    top: 50%;
-    left: 70%;
+    bottom: 10%;
+    right: 10%;
 }
 
 .shape-3 {
     width: 250px;
     height: 250px;
     background: #ffcc80; /* Soft orange */
-    top: 50%; /* Position in the middle of the screen */
-    left: 40%; /* Position slightly off-center */
-    opacity: 0.3; /* Make it slightly more visible */
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    animation: float 6s ease-in-out infinite; /* Floating animation */
+    top: 50%;
+    left: 40%;
 }
 
+/* Floating Animation */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -82,12 +53,6 @@ body::after {
         transform: translateY(-20px); /* Moves the circle up by 20px */
     }
 }
-
-.shape {
-    animation: float 6s ease-in-out infinite; /* Apply animation to all shapes */
-}
-
-
 
 /* Apply Nunito to headlines */
 h1, h2, h3 {
