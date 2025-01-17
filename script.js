@@ -62,3 +62,31 @@ function validateForm() {
 
     return true; // Allow form submission
 }
+
+
+// Form validation function
+function validateForm() {
+    const halfBirthdayInput = document.getElementById("half-birthday");
+    const dateError = document.getElementById("date-error");
+    const timeZoneSelect = document.getElementById("time-zone");
+
+    // Check if the selected date is within the valid range
+    const selectedDate = new Date(halfBirthdayInput.value);
+    const minDate = new Date(halfBirthdayInput.min);
+    const maxDate = new Date(halfBirthdayInput.max);
+
+    if (selectedDate < minDate || selectedDate > maxDate) {
+        dateError.style.display = "block";
+        return false; // Prevent form submission
+    } else {
+        dateError.style.display = "none";
+    }
+
+    // Check if a time zone is selected
+    if (!timeZoneSelect.value) {
+        alert("Please select a valid time zone.");
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission
+}
