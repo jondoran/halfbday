@@ -1,8 +1,11 @@
 /* General Reset */
 
-/* Apply Permanent Marker to headlines */
+/* Apply Oswald to headlines */
 h1, h2, h3 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; /* Use bold weight for headlines */
+    text-transform: uppercase; /* Optional: Makes headlines all caps */
+    letter-spacing: 1px; /* Optional: Adds spacing for a modern look */
     color: #333; /* Adjust color as needed */
     margin-bottom: 10px;
 }
@@ -29,6 +32,7 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
 
 
 /* Hero Section */
