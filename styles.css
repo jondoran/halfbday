@@ -10,6 +10,21 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    #form {
+        padding: 15px; /* Reduce padding */
+    }
+
+    form button {
+        font-size: 0.9rem; /* Adjust button size */
+    }
+
+    h1, h2 {
+        font-size: 1.8rem; /* Reduce headline size */
+    }
+}
+
 /* Apply Nunito to headlines */
 h1, h2, h3 {
     font-family: 'Nunito', sans-serif;
@@ -233,9 +248,18 @@ form button:hover {
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: #f1f1f1; /* Lighter text color for better contrast */
-  font-size: 0.9em;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #f1f1f1; /* Lighter text color for better contrast */
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
