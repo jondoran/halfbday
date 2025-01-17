@@ -4,7 +4,6 @@
 h1, h2, h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700; /* Use bold weight for headlines */
-    text-transform: uppercase; /* Optional: Makes headlines all caps */
     letter-spacing: 1px; /* Optional: Adds spacing for a modern look */
     color: #333; /* Adjust color as needed */
     margin-bottom: 10px;
