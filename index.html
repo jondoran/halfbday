@@ -97,17 +97,19 @@
           <label for="recipient-name">Recipient's Name:</label>
           <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter recipient's name" required aria-label="Recipient's Name">
 
-          <label for="recipient-birthday">Recipient's Birthday:</label>
-          <input type="date" id="recipient-birthday" name="recipient-birthday" required aria-describedby="date-error">
+          <label for="recipient-birthday">Recipient's Birthday (MM-DD):</label>
+          <input type="text" id="recipient-birthday" name="recipient-birthday" placeholder="MM-DD" required pattern="\d{2}-\d{2}" aria-describedby="date-error">
 
-          <label for="half-birthday">Recipient's Half-Birthday:</label>
+          <label for="half-birthday">Half-Birthday Message will be sent:</label>
           <input type="text" id="half-birthday" name="half-birthday" readonly placeholder="Half-birthday will be calculated here">
         </div>
 
-        <label for="timezone">Recipient's Time Zone:</label>
-        <select id="timezone" name="timezone" required>
-          <option value="" disabled selected>Select time zone</option>
-        </select>
+        <div class="form-group">
+          <label for="timezone">Recipient's Time Zone:</label>
+          <select id="timezone" name="timezone" required>
+            <option value="" disabled selected>Select time zone</option>
+          </select>
+        </div>
 
         <!-- Submit Button -->
         <button type="submit">Schedule Email</button>
