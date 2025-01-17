@@ -147,13 +147,8 @@ header {
     form {
         display: grid; /* Use grid layout */
         grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 20px; /* Add spacing between columns */
+        gap: 30px; /* Add spacing between columns */
         align-items: start; /* Align items at the top */
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column; /* Stack labels and inputs vertically */
     }
 
     form button {
