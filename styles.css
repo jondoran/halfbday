@@ -204,6 +204,19 @@ form label {
     margin-bottom: 5px;
 }
 
+/* Time Zone Label Adjustment for Desktop */
+@media (min-width: 768px) {
+    #timezone {
+        display: block;
+        margin-top: 10px;
+    }
+
+    label[for="timezone"] {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
 /* Input Field Styling */
 form input, form select {
     width: 100%; /* Full width for inputs */
