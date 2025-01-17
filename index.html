@@ -13,6 +13,10 @@
 
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+  
 </head>
 <body>
   <!-- Header Section: Hero Section with a catchy tagline -->
@@ -72,40 +76,45 @@
       <p>(Imagine a song so bad, it’s good. That’s what goes here.)</p>
     </section>
 
-    <!-- Form Section -->
-    <section id="form">
-      <h2>Schedule a Half-Birthday Email</h2>
-      <p>Fill out the form below to schedule a surprise email for your loved ones on their half-birthday. Because why not?</p>
+<section id="form">
+  <h2>Schedule a Half-Birthday Email</h2>
+  <p>Fill out the form below to schedule a surprise email for your loved ones on their half-birthday. Because why not?</p>
 
-      <!-- Form for scheduling the email -->
-      <form name="half-birthday-form" method="POST" data-netlify="true">
-        <!-- Netlify Hidden Input -->
-        <input type="hidden" name="form-name" value="half-birthday-form">
+  <!-- Form for scheduling the email -->
+  <form name="half-birthday-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
+    <!-- Netlify Hidden Input -->
+    <input type="hidden" name="form-name" value="half-birthday-form">
 
-        <!-- Input for your name -->
-        <label for="your-name">Your Name:</label>
-        <input type="text" id="your-name" name="your-name" placeholder="Enter your name" required>
+    <!-- Input for your name -->
+    <label for="your-name">Your Name:</label>
+    <input type="text" id="your-name" name="your-name" placeholder="Enter your name" required
+      title="Enter your full name. This will appear in the email to the recipient.">
 
-        <!-- Input for your email -->
-        <label for="your-email">Your E-mail:</label>
-        <input type="email" id="your-email" name="your-email" placeholder="Enter your email address" required>
+    <!-- Input for your email -->
+    <label for="your-email">Your E-mail:</label>
+    <input type="email" id="your-email" name="your-email" placeholder="Enter your email address" required
+      title="Enter your email address. We'll use this to confirm the email schedule.">
 
-        <!-- Input for recipient's name -->
-        <label for="recipient-name">Recipient's Name:</label>
-        <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter recipient's name" required>
+    <!-- Input for recipient's name -->
+    <label for="recipient-name">Recipient's Name:</label>
+    <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter recipient's name" required
+      title="Enter the recipient's name. This will appear in the email greeting.">
 
-        <!-- Input for recipient's email -->
-        <label for="recipient-email">Recipient's E-mail:</label>
-        <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter recipient's email address" required>
+    <!-- Input for recipient's email -->
+    <label for="recipient-email">Recipient's E-mail:</label>
+    <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter recipient's email address" required
+      title="Enter the recipient's email address. The half-birthday email will be sent here.">
 
-        <!-- Input for recipient's half-birthday -->
-        <label for="half-birthday">Recipient's Half-Birthday:</label>
-        <input type="date" id="half-birthday" name="half-birthday" required>
+    <!-- Input for recipient's half-birthday -->
+    <label for="half-birthday">Recipient's Half-Birthday:</label>
+    <input type="date" id="half-birthday" name="half-birthday" required
+      title="Select a date between today and 12 months from now.">
+    <small id="date-error" style="color: red; display: none;">Please select a date within the next 12 months.</small>
 
-        <!-- Submit button -->
-        <button type="submit">Schedule Email</button>
-      </form>
-    </section>
+    <!-- Submit button -->
+    <button type="submit">Schedule Email</button>
+  </form>
+</section>
 
   </main>
 
