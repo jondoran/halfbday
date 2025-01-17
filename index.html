@@ -1,63 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- The <meta> tags below define the character encoding and make the page responsive -->
+  <!-- Metadata and responsive design setup -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- The title of the page that appears in the browser tab -->
+  <!-- Page title -->
   <title>Happy Half Birthday!</title>
 
-  <!-- Link to the external CSS file for styling -->
+  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header section: Contains the main title and a short description -->
+  <!-- Header Section: Hero Section with a catchy tagline -->
   <header>
-    <h1>Happy Half Birthday!</h1>
-    <p>Celebrate your loved ones' half-birthdays in style with a surprise email!</p>
+    <div class="hero">
+      <h1>Make Half Birthdays Extra Special!</h1>
+      <p>Surprise your loved ones with a personalized email on their half-birthday. It’s fun, unexpected, and shows you care!</p>
+      <!-- Call-to-Action Button -->
+      <a href="#form" class="cta-button">Schedule a Half-Birthday Email</a>
+    </div>
   </header>
 
-  <!-- Main content of the page -->
+  <!-- Main Content -->
   <main>
-    <!-- Song Section -->
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Why Celebrate Half Birthdays?</h2>
+      <div class="feature-list">
+        <!-- Feature 1 -->
+        <div class="feature">
+          <!-- SVG Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="#4CAF50">
+            <circle cx="12" cy="12" r="10" stroke="none" />
+            <text x="12" y="16" font-size="10" text-anchor="middle" fill="white">🎉</text>
+          </svg>
+          <h3>Double the Celebrations</h3>
+          <p>Why wait a full year? Celebrate twice as often and make every day special.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature">
+          <!-- SVG Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="#ff9800">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+            <path d="M11 7h2v6h-2zM11 15h2v2h-2z" fill="white" />
+          </svg>
+          <h3>Personalized Emails</h3>
+          <p>Send heartfelt messages that bring a smile to their face on their half-birthday.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature">
+          <!-- SVG Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="#4CAF50">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+            <path d="M12 6a6 6 0 0 1 6 6h-6z" fill="white" />
+          </svg>
+          <h3>Set It and Forget It</h3>
+          <p>Schedule emails in advance and let us handle the rest. No reminders needed!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder for the Happy Half Birthday Song -->
     <section id="song">
-      <!-- Section title -->
       <h2>🎵 Happy Half Birthday Song 🎵</h2>
-      <!-- Placeholder text for the song -->
       <p>(Placeholder for a fun, tongue-in-cheek song!)</p>
     </section>
 
     <!-- Form Section -->
     <section id="form">
-      <!-- Section title -->
       <h2>Schedule a Half-Birthday Email</h2>
+      <p>Fill out the form below to schedule a surprise email for your loved ones on their half-birthday!</p>
 
-      <!-- Form starts here -->
-      <!-- The "name" attribute identifies the form for Netlify, and the "method" is set to POST for form submissions -->
+      <!-- Form for scheduling the email -->
       <form name="half-birthday-form" method="POST" data-netlify="true">
-        <!-- Hidden input for Netlify to identify the form -->
+        <!-- Netlify Hidden Input -->
         <input type="hidden" name="form-name" value="half-birthday-form">
 
-        <!-- Input for the recipient's first name -->
+        <!-- Input for recipient's first name -->
         <label for="first-name">First Name:</label>
-        <!-- 'id' links the label to this input, and 'required' ensures the field must be filled -->
         <input type="text" id="first-name" name="first-name" placeholder="Enter first name" required>
 
-        <!-- Input for the recipient's email address -->
+        <!-- Input for recipient's email -->
         <label for="email">Email Address:</label>
-        <!-- 'type="email"' ensures the input is validated as an email -->
         <input type="email" id="email" name="email" placeholder="Enter email address" required>
 
-        <!-- Input for the recipient's birthday -->
+        <!-- Input for recipient's birthday -->
         <label for="birthday">Birthday:</label>
-        <!-- 'type="date"' provides a date picker for the user -->
         <input type="date" id="birthday" name="birthday" required>
 
-        <!-- Submit button to send the form -->
+        <!-- Submit button -->
         <button type="submit">Schedule Email</button>
       </form>
     </section>
   </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 Happy Half Birthday. All rights reserved.</p>
+  </footer>
 </body>
 </html>
