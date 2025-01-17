@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const recipientBirthdayInput = document.getElementById("recipient-birthday");
+    const halfBirthdayInput = document.getElementById("half-birthday");
     const timeZoneSelect = document.getElementById("timezone");
 
     // Populate time zone dropdown dynamically
@@ -17,10 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
         timeZoneSelect.value = userTimeZone;
     }
 
-    // Calculate and display the half-birthday dynamically
+    // Calculate and populate the half-birthday dynamically
     recipientBirthdayInput.addEventListener("change", function () {
         const birthday = new Date(this.value);
-        if (isNaN(birthday)) return;
+        if (isNaN(birthday)) {
+            halfBirthdayInput.value = ""; // Clear the field if invalid
+            return;
+        }
 
         // Calculate half-birthday (6 months later)
         const halfBirthday = new Date(birthday);
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const options = { year: "numeric", month: "long", day: "numeric" };
         const formattedHalfBirthday = halfBirthday.toLocaleDateString(undefined, options);
 
-        // Display the half-birthday
-        alert(`The recipient's half-birthday is on ${formattedHalfBirthday}.`);
+        // Populate the half-birthday field
+        halfBirthdayInput.value = formattedHalfBirthday;
     });
 });
