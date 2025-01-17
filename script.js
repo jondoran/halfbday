@@ -18,17 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
         timeZoneSelect.value = userTimeZone;
     }
 
-    // Calculate and populate the half-birthday dynamically
-    recipientBirthdayInput.addEventListener("change", function () {
-        const birthday = new Date(this.value);
-        if (isNaN(birthday)) {
+    // Calculate and populate the next half-birthday dynamically
+    recipientBirthdayInput.addEventListener("input", function () {
+        const today = new Date();
+        const [month, day] = this.value.split("-").map(Number);
+
+        if (!month || !day || month < 1 || month > 12 || day < 1 || day > 31) {
             halfBirthdayInput.value = ""; // Clear the field if invalid
             return;
         }
 
-        // Calculate half-birthday (6 months later)
-        const halfBirthday = new Date(birthday);
-        halfBirthday.setMonth(birthday.getMonth() + 6);
+        const currentYear = today.getFullYear();
+        const birthdayThisYear = new Date(currentYear, month - 1, day);
+        const halfBirthday = new Date(birthdayThisYear);
+
+        // Add 6 months to calculate half-birthday
+        halfBirthday.setMonth(halfBirthday.getMonth() + 6);
+
+        // If the half-birthday has already passed, calculate for next year
+        if (halfBirthday < today) {
+            halfBirthday.setFullYear(currentYear + 1);
+        }
 
         // Format the half-birthday date
         const options = { year: "numeric", month: "long", day: "numeric" };
