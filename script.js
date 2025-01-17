@@ -16,24 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (timeZones.includes(userTimeZone)) {
         timeZoneSelect.value = userTimeZone;
     }
+
+    // Calculate and display the half-birthday dynamically
+    recipientBirthdayInput.addEventListener("change", function () {
+        const birthday = new Date(this.value);
+        if (isNaN(birthday)) return;
+
+        // Calculate half-birthday (6 months later)
+        const halfBirthday = new Date(birthday);
+        halfBirthday.setMonth(birthday.getMonth() + 6);
+
+        // Format the half-birthday date
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        const formattedHalfBirthday = halfBirthday.toLocaleDateString(undefined, options);
+
+        // Display the half-birthday
+        alert(`The recipient's half-birthday is on ${formattedHalfBirthday}.`);
+    });
 });
-
-// Form validation function
-function validateForm() {
-    const recipientBirthdayInput = document.getElementById("recipient-birthday");
-    const timeZoneSelect = document.getElementById("timezone");
-
-    // Check if a valid date is selected
-    if (!recipientBirthdayInput.value) {
-        alert("Please select a valid birthday.");
-        return false; // Prevent form submission
-    }
-
-    // Check if a time zone is selected
-    if (!timeZoneSelect.value) {
-        alert("Please select a valid time zone.");
-        return false; // Prevent form submission
-    }
-
-    return true; // Allow form submission
-}
