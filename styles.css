@@ -1,12 +1,35 @@
 /* General Reset */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+
+/* Apply Permanent Marker to headlines */
+h1, h2, h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: #333; /* Adjust color as needed */
+    margin-bottom: 10px;
 }
+
+/* Apply Rubik to body text */
+body {
+    font-family: 'Rubik', sans-serif;
+    color: #444; /* Adjust color as needed */
+    line-height: 1.6;
+}
+
+/* Optional: Style buttons or call-to-action elements */
+button {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500; /* Use a slightly bolder weight for buttons */
+    background-color: #4CAF50; /* Example button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 
 /* Hero Section */
 header {
