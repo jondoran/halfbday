@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeZoneSelect = document.getElementById("recipientTimeZone");
   const errorMessage = document.getElementById("date-error");
 
+  function scrollToForm() {
+  document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+}
+
   // Populate month and day dropdowns
   for (let i = 1; i <= 12; i++) {
     const option = document.createElement("option");
