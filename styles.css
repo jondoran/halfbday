@@ -162,7 +162,7 @@ form {
 .error-message {
   color: red;
   font-size: 0.9rem;
-  margin-top: -10px;
+  margin-top: 5px; /* Adjusted to avoid overlap */
   margin-bottom: 10px;
   display: block;
 }
@@ -185,7 +185,7 @@ form button {
   transition: background-color 0.3s ease;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 10px auto; /* Adjusted for better alignment */
 }
 
 form button:hover {
@@ -244,4 +244,14 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Responsive Design for Very Small Screens */
+@media (max-width: 320px) {
+  form input,
+  form select,
+  form button {
+    max-width: 100%; /* Ensure inputs and buttons fit within the screen */
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
 }
