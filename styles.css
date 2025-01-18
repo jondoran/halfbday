@@ -61,7 +61,7 @@ section {
 
 #features h2 {
     text-align: center; /* Center the headline */
-    margin-bottom: 0.5em;
+    margin-bottom: 2em;
 }
 
 #features .container {
@@ -92,7 +92,7 @@ section {
 
 #form h2 {
     text-align: center; /* Center the headline */
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 #form p {
