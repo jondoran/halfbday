@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Nobody cares about half birthdays</h1>
+        <h1>Nobody cares about half birthdays.</h1>
         <p>(Except maybe you? A tiny bit?)</p>
     </header>
 
@@ -20,7 +20,7 @@
             </div>
             <div class="column">
                 <h2>Send the people you care about a canned message and a lame song.</h2>
-                <p>It's, like, almost literally the least you can do.</p>
+                <p>It's, like, literally the least you can do.</p>
                 <button onclick="scrollToForm()">Schedule a half-hearted message</button>
             </div>
         </div>
@@ -32,15 +32,15 @@
             <div class="column">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>                
                 <h3>It's free</h3>
-                <p>No cost, no emotional investment.</p>
+                <p>No financial investment, no emotional investment.</p>
             </div>
             <div class="column">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 <h3>Set and forget</h3>
-                <p>Schedule it now and return to not caring.</p>
+                <p>Schedule it now and go back to not caring.</p>
             </div>
             <div class="column">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="22" x2="22" y2="2"></line></svg>
                 <h3>Almost zero effort</h3>
                 <p>Seriously, just fill out the form.</p>
             </div>
@@ -48,49 +48,65 @@
     </section>
 
     <section id="form">
-        <h2>Schedule a Half-Birthday Message & Song</h2>
+        <h2>Schedule a message</h2>
+        <p>On 'the big day' they'll receive an underwhelming email greeting with a gently mocking song, from Future You.</p>
         <form name="half-birthday-form" netlify>
-            <label for="sender-name">Your Name:</label>
-            <input type="text" id="sender-name" name="sender-name" required>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="sender-name">Your name</label>
+                    <input type="text" id="sender-name" name="sender-name" placeholder="So they know who sent the message" required>
+                </div>
+                <div class="form-field">
+                    <label for="sender-email">Your email</label>
+                    <input type="email" id="sender-email" name="sender-email" placeholder="We'll cc you" required>
+                </div>
+            </div>
 
-            <label for="sender-email">Your Email:</label>
-            <input type="email" id="sender-email" name="sender-email" required>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="recipient-name">Their name</label>
+                    <input type="text" id="recipient-name" name="recipient-name" placeholder="For bare minimum personalization" required>
+                </div>
+                <div class="form-field">
+                    <label for="recipient-email">Their email</label>
+                    <input type="email" id="recipient-email" name="recipient-email" placeholder="Um, yeah, we obviously need this" required>
+                </div>
+            </div>
 
-            <label for="recipient-name">Recipient's Name:</label>
-            <input type="text" id="recipient-name" name="recipient-name" required>
-
-            <label for="recipient-email">Recipient's Email:</label>
-            <input type="email" id="recipient-email" name="recipient-email" required>
-
-<div class="form-group">
-  <label for="recipient_month">Recipient's Birthday (Month):</label>
-  <select id="recipient_month" name="recipient_month" required>
-    <option value="01">January</option>
-    <option value="02">February</option>
-    <option value="03">March</option>
-    <option value="04">April</option>
-    <option value="05">May</option>
-    <option value="06">June</option>
-    <option value="07">July</option>
-    <option value="08">August</option>
-    <option value="09">September</option>
-    <option value="10">October</option>
-    <option value="11">November</option>
-    <option value="12">December</option>
-  </select>
-</div>
-<div class="form-group">
-  <label for="recipient_day">Recipient's Birthday (Day):</label>
-  <select id="recipient_day" name="recipient_day" required></select>
-</div>
-<div class="form-group">
-  <label for="half-birthday">Half-Birthday Message Will Be Sent On:</label>
-  <input type="text" id="half-birthday" name="half-birthday" readonly>
-  <label for="recipient-timezone">Recipient's Time Zone:</label>
-  <select id="recipient-timezone" name="recipient-timezone"></select>
-</div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="recipient_month">Their birthday month</label>
+                    <select id="recipient_month" name="recipient_month" required>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="recipient_day">Their birthday day</label>
+                    <select id="recipient_day" name="recipient_day" required></select>
+                </div>
+                <div class="form-field">
+                    <label for="half-birthday">Send date</label>
+                    <input type="text" id="half-birthday" name="half-birthday" placeholder="Calculated half birthday date" readonly>
+                </div>
+                <div class="form-field">
+                    <label for="recipient-timezone">Their time zone</label>
+                    <select id="recipient-timezone" name="recipient-timezone"></select>
+                </div>
+            </div>
 
             <button type="submit">Submit</button>
+            
         </form>
     </section>
 

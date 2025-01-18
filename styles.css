@@ -1,20 +1,30 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    padding: 1em; /* Add padding to the body */
+    box-sizing: border-box; /* Include padding in element's total width and height */
     background-color: #f4f4f4; /* Light gray background for the entire page */
     color: #333;
 }
 
 header {
     background-color: #f0f0f0;
-    padding: 40px 0;
+    padding: 1.8em 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3.6em;
     margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 section {
@@ -57,7 +67,7 @@ section {
 
 #features h2 {
     text-align: center; /* Center the headline */
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 #features .container {
@@ -79,11 +89,29 @@ section {
 
 /* Form section */
 #form {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto; /* Center the form */
     background-color: #fff;
-    padding: 40px;
+    padding: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Add some spacing above the form */
     margin-bottom: 40px; /* Add some spacing below the form */
+}
+
+#form form { /* Target the form element inside the #form section */
+    text-align: center;
+}
+
+#form h2 {
+    text-align: center; /* Center the headline */
+    margin-bottom: 1em;
+}
+
+#form p {
+    text-align: center; /* Center the tagline */
+    margin-bottom: 2em;
 }
 
 label {
@@ -102,7 +130,7 @@ input, select {
 
 button {
     background-color: #90ee90;
-    color: white;
+    color: #333; /* Changed text color to dark gray */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -117,9 +145,14 @@ button:hover {
 /* Footer section */
 footer {
     background-color: #f0f0f0; /* Even darker gray for the footer */
-    padding: 20px 0;
+    padding: 1em 0;
     text-align: center;
 }
+
+#footer p {
+    font-size: 1em;
+}
+
 
 /* Modal styles */
 .modal {
@@ -137,7 +170,7 @@ footer {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 0.5em;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
@@ -153,7 +186,7 @@ footer {
     cursor: pointer;
 }
 
-@media (max-width: 768px) { /* Adjust layout for smaller screens */
+@media (max-width: 767px) { /* Adjust layout for smaller screens */
     #features .container {
         flex-direction: column; /* Stack columns vertically */
     }
@@ -176,4 +209,32 @@ footer {
         display: block; /* Ensure button takes full width */
         margin: 0 auto; /* Center the button */
     }
+}
+
+/* Styles for two-column form layout on larger screens */
+@media (min-width: 768px) {
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .form-field {
+        flex: 1 0 23%; /* Adjust width as needed for four columns */
+        margin-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Target the last form-field in a row to remove margin */
+    .form-field:nth-last-child(1) {
+        margin-right: 0;
+    }
+
+  /* Add responsiveness to labels and inputs */
+  .form-field label,
+  .form-field input,
+  .form-field select {
+    width: 100%; /* Ensures labels and inputs span full width of their container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
 }
