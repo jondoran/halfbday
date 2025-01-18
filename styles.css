@@ -231,6 +231,22 @@ form input, form select {
     transition: border-color 0.3s ease; /* Smooth transition for focus */
 }
 
+.birthday-select {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
 /* Input Focus Styling */
 form input:focus, form select:focus {
     border-color: #4CAF50; /* Highlight border on focus */
