@@ -241,6 +241,25 @@ form {
     display: block;
 }
 
+/* Ensure all form fields in the same row have consistent alignment and width */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* Add consistent spacing between fields */
+}
+
+.form-row input,
+.form-row select {
+  flex: 1; /* Ensure all input fields take up equal space */
+  min-width: 0; /* Prevent fields from overflowing */
+}
+
+.form-row label {
+  flex: 0 0 auto; /* Ensure labels do not stretch */
+  margin-right: 0.5rem; /* Add consistent spacing between labels and fields */
+}
+
 /* Submit Button Styling */
 .form-submit {
     grid-column: span 3; /* Make the submit button span all columns */
