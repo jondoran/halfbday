@@ -180,21 +180,22 @@ footer {
 
 /* Styles for two-column form layout on larger screens */
 @media (min-width: 768px) {
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem; /* Adjust as needed */
-  }
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
 
-  .form-field {
-    flex: 1 0 45%; /* Adjust width as needed */
-    margin-right: 1rem; /* Adjust spacing between columns */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-  }
+    .form-field {
+        flex: 1 0 23%; /* Adjust width as needed for four columns */
+        margin-right: 1rem;
+        box-sizing: border-box;
+    }
 
-  .form-field:nth-child(2n) { /* Selects every even child within .form-row */
-    margin-right: 0; /* Removes right margin from the second field in each row */
-  }
+    /* Target the last form-field in a row to remove margin */
+    .form-field:nth-last-child(1) {
+        margin-right: 0;
+    }
 
   /* Add responsiveness to labels and inputs */
   .form-field label,
