@@ -9,7 +9,7 @@ body {
 
 header {
     background-color: #f0f0f0;
-    padding: 40px 0;
+    padding: 1em 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
 }
@@ -93,7 +93,7 @@ section {
     margin-left: auto;
     margin-right: auto; /* Center the form */
     background-color: #fff;
-    padding: 40px;
+    padding: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 40px; /* Add some spacing above the form */
@@ -145,7 +145,7 @@ button:hover {
 /* Footer section */
 footer {
     background-color: #f0f0f0; /* Even darker gray for the footer */
-    padding: 20px 0;
+    padding: 1em 0;
     text-align: center;
 }
 
@@ -170,7 +170,7 @@ footer {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 0.5em;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
