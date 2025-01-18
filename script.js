@@ -23,32 +23,42 @@ function populateTimezones() {
     });
 }
 
-function calculateHalfBirthday() {
-    const birthdayInput = document.getElementById('recipient-birthday');
-    const halfBirthdayInput = document.getElementById('half-birthday-date');
+const recipientMonth = document.getElementById('recipient_month');
+const recipientDay = document.getElementById('recipient_day');
+const halfBirthday = document.getElementById('half-birthday');
 
-    birthdayInput.addEventListener('change', () => {
-        const birthdayDate = birthdayInput.value;
-        if (birthdayDate) {
-            try {
-                const [month, day] = birthdayDate.split('/').map(Number);
-                let halfBirthday = new Date(new Date().getFullYear(), month - 1 + 6, day); // Add 6 months
+function updateRecipientDayDropdown() {
+    const month = parseInt(recipientMonth.value);
+    const daysInMonth = new Date(2000, month, 0).getDate(); // Using year 2000 avoids leap year issues
 
-                // Adjust the year if the half-birthday is in the next year
-                if (halfBirthday < new Date()) {
-                    halfBirthday.setFullYear(halfBirthday.getFullYear() + 1);
-                }
+    recipientDay.innerHTML = ''; // Clear existing options
 
-                const formattedHalfBirthday = halfBirthday.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
-                halfBirthdayInput.value = formattedHalfBirthday;
-            } catch (error) {
-                halfBirthdayInput.value = 'Invalid date format';
-            }
-        } else {
-            halfBirthdayInput.value = '';
-        }
-    });
+    for (let day = 1; day <= daysInMonth; day++) {
+        const option = document.createElement('option');
+        option.value = (day < 10 ? '0' : '') + day; // Pad with leading zero if needed
+        option.text = day;
+        recipientDay.appendChild(option);
+    }
+
+    updateHalfBirthday();
 }
+
+function updateHalfBirthday() {
+
+    const month = parseInt(recipientMonth.value);
+    const day = parseInt(recipientDay.value);
+
+    let halfBirthdayDate = new Date(2000, month -1, day);
+    halfBirthdayDate.setMonth(halfBirthdayDate.getMonth() + 6);
+
+    const formattedHalfBirthday = halfBirthdayDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    halfBirthday.value = formattedHalfBirthday;
+}
+
+recipientMonth.addEventListener('change', updateRecipientDayDropdown);
+recipientDay.addEventListener('change', updateHalfBirthday);
+
+updateRecipientDayDropdown(); // Initial population
 
 
 function showPrivacyPolicy() {
