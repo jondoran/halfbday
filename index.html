@@ -84,51 +84,63 @@
       </div>
     </section>
 
-<section id="form-section">
-  <form id="half-birthday-form" method="POST" data-netlify="true">
-    <div class="form-container">
-      <!-- Column 1 -->
-      <div class="form-column">
-        <!-- Birthday Field -->
-        <div class="form-group">
-          <label for="birthday">Birthday</label>
-          <input type="date" id="birthday" name="birthday" required>
-        </div>
+<section id="form">
+  <h2>Schedule a Half-Birthday Email</h2>
+  <form>
+    <!-- First Name -->
+    <div class="form-column">
+      <label for="recipient-name">First Name</label>
+      <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter first name" required>
+    </div>
+
+    <!-- Email Address -->
+    <div class="form-column">
+      <label for="recipient-email">Email Address</label>
+      <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter email address" required>
+    </div>
+
+    <!-- Birthday -->
+    <div class="form-column">
+      <label for="recipient-birthday">Birthday</label>
+      <div class="birthday-select">
+        <select id="recipient-month" name="recipient-month" required>
+          <option value="" disabled selected>Month</option>
+          <!-- Populated dynamically by script.js -->
+        </select>
+        <select id="recipient-day" name="recipient-day" required>
+          <option value="" disabled selected>Day</option>
+          <!-- Populated dynamically by script.js -->
+        </select>
       </div>
+    </div>
 
-      <!-- Column 2 -->
-      <div class="form-column">
-        <!-- First Name Field -->
-        <div class="form-group">
-          <label for="first-name">First Name</label>
-          <input type="text" id="first-name" name="first-name" placeholder="Enter first name" required>
-        </div>
+    <!-- Time Zone -->
+    <div class="form-column">
+      <label for="timezone">Time Zone</label>
+      <select id="timezone" name="timezone" required>
+        <option value="" disabled selected>Select your time zone</option>
+        <!-- Populated dynamically by script.js -->
+      </select>
+    </div>
 
-        <!-- Email Address Field -->
-        <div class="form-group">
-          <label for="email">E-mail Address</label>
-          <input type="email" id="email" name="email" placeholder="Enter e-mail address" required>
-        </div>
+    <!-- Half-Birthday Output -->
+    <div class="form-column">
+      <label for="half-birthday">Half-Birthday</label>
+      <input type="text" id="half-birthday" name="half-birthday" readonly placeholder="Calculated half-birthday">
+    </div>
 
-        <!-- Recipient Time Zone Field -->
-        <div class="form-group">
-          <label for="recipient-timezone">Recipient Time Zone</label>
-          <select id="recipient-timezone" name="recipient-timezone">
-            <!-- Options will be populated dynamically via JavaScript -->
-          </select>
-        </div>
-      </div>
+    <!-- Error Message -->
+    <div class="form-column">
+      <span id="date-error" class="error-message"></span>
+    </div>
 
-      <!-- Column 3 -->
-      <div class="form-column">
-        <!-- Submit Button -->
-        <div class="form-group">
-          <button type="submit" id="submit-button">Schedule Half-Birthday Email</button>
-        </div>
-      </div>
+    <!-- Submit Button -->
+    <div class="form-submit">
+      <button type="submit">Schedule Email</button>
     </div>
   </form>
 </section>
+
 
 </main>
 
