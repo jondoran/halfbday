@@ -162,12 +162,12 @@ footer {
         margin-bottom: 20px;
     }
 
-    #song { /* Correct selector for the song section */
+    #song .container { /* Correct selector for the song section container */
         flex-direction: column; /* Stack columns vertically */
         align-items: center; /* Center content horizontally */
     }
 
-    #song > div {
+    #song > div { /* Adjust direct children of #song */
         width: 100%; /* Make each column take full width */
         margin-bottom: 20px; /* Add spacing between columns */
     }
