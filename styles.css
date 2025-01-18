@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 1rem; /* Add padding to the body */
+    padding: 1em; /* Add padding to the body */
     box-sizing: border-box; /* Include padding in element's total width and height */
     background-color: #f4f4f4; /* Light gray background for the entire page */
     color: #333;
