@@ -43,23 +43,32 @@ function updateRecipientDayDropdown() {
     updateHalfBirthday();
 }
 
-function updateHalfBirthday() {
+function calculateHalfBirthday(month, day) {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    let halfBirthday = new Date(currentYear, month - 1, day); // Month is 0-indexed
 
+    halfBirthday.setMonth(halfBirthday.getMonth() + 6);
+
+    if (halfBirthday < today) {
+        halfBirthday.setFullYear(currentYear + 1);
+    }
+
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    return halfBirthday.toLocaleDateString('en-GB', options);
+}
+
+function updateHalfBirthday() {
     const month = parseInt(recipientMonth.value);
     const day = parseInt(recipientDay.value);
-
-    let halfBirthdayDate = new Date(2000, month -1, day);
-    halfBirthdayDate.setMonth(halfBirthdayDate.getMonth() + 6);
-
-    const formattedHalfBirthday = halfBirthdayDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-    halfBirthday.value = formattedHalfBirthday;
+    const halfBirthdayDate = calculateHalfBirthday(month, day); // Use the new function
+    halfBirthday.value = halfBirthdayDate;
 }
 
 recipientMonth.addEventListener('change', updateRecipientDayDropdown);
 recipientDay.addEventListener('change', updateHalfBirthday);
-
 updateRecipientDayDropdown(); // Initial population
-
+updateHalfBirthday(); // Call to initialize the half-birthday field
 
 function showPrivacyPolicy() {
     document.getElementById('privacy-policy').style.display = 'block';
