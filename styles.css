@@ -149,6 +149,11 @@ footer {
     text-align: center;
 }
 
+#footer p {
+    font-size: 1em;
+}
+
+
 /* Modal styles */
 .modal {
     display: none;
