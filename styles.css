@@ -92,7 +92,7 @@ section {
 
 #form h2, p {
     text-align: center; /* Center the headline */
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 label {
