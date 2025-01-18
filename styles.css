@@ -90,6 +90,10 @@ section {
     margin-bottom: 40px; /* Add some spacing below the form */
 }
 
+#form form { /* Target the form element inside the #form section */
+    text-align: center;
+}
+
 #form h2 {
     text-align: center; /* Center the headline */
     margin-bottom: 1em;
@@ -115,7 +119,7 @@ input, select {
 }
 
 button {
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: #90ee90;
     color: #333; /* Changed text color to dark gray */
     padding: 12px 20px;
