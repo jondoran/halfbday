@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const monthSelect = document.getElementById("recipient-month");
   const daySelect = document.getElementById("recipient-day");
-  const halfBirthdayInput = document.getElementById("half-birthday");
-  const timeZoneSelect = document.getElementById("timezone");
+  const halfBirthdayInput = document.getElementById("halfBirthday");
+  const timeZoneSelect = document.getElementById("recipientTimeZone");
   const errorMessage = document.getElementById("date-error");
 
   // Populate month and day dropdowns
