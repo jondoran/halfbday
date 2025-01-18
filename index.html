@@ -64,11 +64,33 @@
             <label for="recipient-timezone">Recipient's Time Zone:</label>
             <select id="recipient-timezone" name="recipient-timezone"></select>
 
-            <label for="recipient-birthday">Recipient's Birthday (MM/DD):</label>
-            <input type="text" id="recipient-birthday" name="recipient-birthday" placeholder="MM/DD" required pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])">
+<div class="form-group">
+  <label for="recipient_month">Recipient's Birthday (Month):</label>
+  <select id="recipient_month" name="recipient_month" required>
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="recipient_day">Recipient's Birthday (Day):</label>
+  <select id="recipient_day" name="recipient_day" required>
 
-            <label for="half-birthday-date">Half-Birthday Date:</label>
-            <input type="text" id="half-birthday-date" name="half-birthday-date" readonly>
+  </select>
+</div>
+<div class="form-group">
+  <label for="half-birthday">Half-Birthday Message Date:</label>
+  <input type="text" id="half-birthday" name="half-birthday" readonly>
+</div>
 
             <button type="submit">Submit</button>
         </form>
