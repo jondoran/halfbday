@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>Half-Birthday 'Celebrations'</h1>
-        <p>Because even minor, arbitrary milestones deserve mediocre recognition.</p>
+        <h1>Nobody cares about half birthdays</h1>
+        <p>(Except maybe you? A tiny bit?)</p>
     </header>
 
     <section id="song">
@@ -19,8 +19,9 @@
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3HctJdhy5CFb59Tq8hQohA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <div class="column">
-                <h2>Ready to 'Celebrate'?</h2>
-                <button onclick="scrollToForm()">Schedule a Half-Birthday Reminder</button>
+                <h2>Send the people you care about a canned message and a lame song.</h2>
+                <p>It's, like, almost literally the least you can do.</p>
+                <button onclick="scrollToForm()">Schedule a half-hearted message</button>
             </div>
         </div>
     </section>
@@ -30,24 +31,24 @@
         <div class="container">
             <div class="column">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>                
-                <h3>Low-Effort Festivities</h3>
-                <p>Because who has time for *real* birthdays?</p>
+                <h3>It's free</h3>
+                <p>No cost, no emotional investment.</p>
             </div>
             <div class="column">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                <h3>Automated Reminders</h3>
-                <p>Set it and forget it. Almost like you care.</p>
+                <h3>Set and forget</h3>
+                <p>Schedule it now and return to not caring.</p>
             </div>
             <div class="column">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <h3>Personalized Emails</h3>
-                <p>Make it *slightly* special. Or don't.</p>
+                <h3>Almost zero effort</h3>
+                <p>Seriously, just fill out the form.</p>
             </div>
         </div>
     </section>
 
     <section id="form">
-        <h2>Schedule a Half-Birthday Reminder</h2>
+        <h2>Schedule a Half-Birthday Message & Song</h2>
         <form name="half-birthday-form" netlify>
             <label for="sender-name">Your Name:</label>
             <input type="text" id="sender-name" name="sender-name" required>
@@ -64,11 +65,33 @@
             <label for="recipient-timezone">Recipient's Time Zone:</label>
             <select id="recipient-timezone" name="recipient-timezone"></select>
 
-            <label for="recipient-birthday">Recipient's Birthday (MM/DD):</label>
-            <input type="text" id="recipient-birthday" name="recipient-birthday" placeholder="MM/DD" required pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])">
+<div class="form-group">
+  <label for="recipient_month">Recipient's Birthday (Month):</label>
+  <select id="recipient_month" name="recipient_month" required>
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="recipient_day">Recipient's Birthday (Day):</label>
+  <select id="recipient_day" name="recipient_day" required>
 
-            <label for="half-birthday-date">Half-Birthday Date:</label>
-            <input type="text" id="half-birthday-date" name="half-birthday-date" readonly>
+  </select>
+</div>
+<div class="form-group">
+  <label for="half-birthday">Half-Birthday Message Will Be Sent On:</label>
+  <input type="text" id="half-birthday" name="half-birthday" readonly>
+</div>
 
             <button type="submit">Submit</button>
         </form>
@@ -81,7 +104,7 @@
     <div id="privacy-policy" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="hidePrivacyPolicy()">&times;</span>
-            <p>Our privacy policy is to not care. We might remember your email for a bit, but probably not. Your half-birthday is your problem, not ours.</p>
+            <p>Placeholder for privacy policy.</p>
         </div>
     </div>
 
