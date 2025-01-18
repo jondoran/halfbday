@@ -161,4 +161,19 @@ footer {
         flex-basis: 100%; /* Columns occupy full width */
         margin-bottom: 20px;
     }
+
+    #song-section {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    #song-section > div {
+        width: 100%; /* Make each column take full width */
+        margin-bottom: 20px; /* Add spacing between columns */
+    }
+
+    #song-cta {
+        display: block; /* Ensure button takes full width */
+        margin: 0 auto; /* Center the button */
+    }
 }
