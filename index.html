@@ -83,64 +83,48 @@
         </div>
       </div>
     </section>
-
-<section id="form">
-  <h2>Schedule a Half-Birthday Email</h2>
-  <form>
-    <!-- First Name -->
+<!-- Updated Form Section -->
+<form name="halfBirthdayForm" method="POST" netlify>
+  <div class="form-container">
+    <!-- Column 1 -->
     <div class="form-column">
-      <label for="recipient-name">First Name</label>
-      <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter first name" required>
+      <label for="yourName">Your Name</label>
+      <input type="text" id="yourName" name="yourName" required />
+
+      <label for="yourEmail">Your Email</label>
+      <input type="email" id="yourEmail" name="yourEmail" required />
     </div>
 
-    <!-- Email Address -->
+    <!-- Column 2 -->
     <div class="form-column">
-      <label for="recipient-email">Email Address</label>
-      <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter email address" required>
-    </div>
+      <label for="recipientName">Recipient's Name</label>
+      <input type="text" id="recipientName" name="recipientName" required />
 
-    <!-- Birthday -->
-    <div class="form-column">
-      <label for="recipient-birthday">Birthday</label>
-      <div class="birthday-select">
-        <select id="recipient-month" name="recipient-month" required>
-          <option value="" disabled selected>Month</option>
-          <!-- Populated dynamically by script.js -->
-        </select>
-        <select id="recipient-day" name="recipient-day" required>
-          <option value="" disabled selected>Day</option>
-          <!-- Populated dynamically by script.js -->
-        </select>
-      </div>
-    </div>
+      <label for="recipientEmail">Recipient's Email</label>
+      <input type="email" id="recipientEmail" name="recipientEmail" required />
 
-    <!-- Time Zone -->
-    <div class="form-column">
-      <label for="timezone">Time Zone</label>
-      <select id="timezone" name="timezone" required>
-        <option value="" disabled selected>Select your time zone</option>
-        <!-- Populated dynamically by script.js -->
+      <label for="recipientTimeZone">Recipient's Time Zone</label>
+      <select id="recipientTimeZone" name="recipientTimeZone" required>
+        <option value="UTC-12:00">UTC-12:00</option>
+        <option value="UTC-11:00">UTC-11:00</option>
+        <option value="UTC-10:00">UTC-10:00</option>
+        <!-- Add more time zones as needed -->
+        <option value="UTC+12:00">UTC+12:00</option>
       </select>
     </div>
 
-    <!-- Half-Birthday Output -->
+    <!-- Column 3 -->
     <div class="form-column">
-      <label for="half-birthday">Half-Birthday</label>
-      <input type="text" id="half-birthday" name="half-birthday" readonly placeholder="Calculated half-birthday">
-    </div>
+      <label for="recipientBirthday">Recipient's Birthday</label>
+      <input type="date" id="recipientBirthday" name="recipientBirthday" required />
 
-    <!-- Error Message -->
-    <div class="form-column">
-      <span id="date-error" class="error-message"></span>
+      <label for="halfBirthday">Calculated Half-Birthday</label>
+      <input type="text" id="halfBirthday" name="halfBirthday" readonly />
     </div>
+  </div>
 
-    <!-- Submit Button -->
-    <div class="form-submit">
-      <button type="submit">Schedule Email</button>
-    </div>
-  </form>
-</section>
-
+  <button type="submit">Schedule Half-Birthday Email</button>
+</form>
 
 </main>
 
