@@ -1,93 +1,95 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const monthSelect = document.getElementById("recipient-month");
-  const daySelect = document.getElementById("recipient-day");
-  const halfBirthdayInput = document.getElementById("halfBirthday");
+function populateTimeZones() {
   const timeZoneSelect = document.getElementById("recipientTimeZone");
-  const errorMessage = document.getElementById("date-error");
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  function scrollToForm() {
-  document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
-}
+  // Predefined list of time zones
+  const timeZones = [
+    "US/Eastern",
+    "US/Central",
+    "US/Mountain",
+    "US/Pacific",
+    "UTC",
+    "Europe/London",
+    "Asia/Tokyo",
+    "Australia/Sydney",
+  ];
 
-  // Populate month and day dropdowns
-  for (let i = 1; i <= 12; i++) {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = new Date(0, i - 1).toLocaleString("default", { month: "long" });
-    monthSelect.appendChild(option);
+  // Add the user's detected time zone to the list if it's not already there
+  if (!timeZones.includes(userTimeZone)) {
+    timeZones.unshift(userTimeZone); // Add to the beginning
   }
 
-  for (let i = 1; i <= 31; i++) {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = i;
-    daySelect.appendChild(option);
-  }
+  timeZoneSelect.innerHTML = ""; // Clear existing options
 
-  // Populate time zone dropdown dynamically
-  const timeZones = Intl.supportedValuesOf("timeZone");
-  timeZones.forEach((zone) => {
+  timeZones.forEach((tz) => {
     const option = document.createElement("option");
-    option.value = zone;
-    option.textContent = zone.replace("_", " "); // Replace underscores with spaces for readability
+    option.value = tz;
+    option.text = tz;
+    if (tz === userTimeZone) {
+      option.selected = true; // Set detected time zone as default
+    }
     timeZoneSelect.appendChild(option);
   });
+}
 
-  // Auto-detect user's time zone and pre-select it
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  if (timeZones.includes(userTimeZone)) {
-    timeZoneSelect.value = userTimeZone;
-  } else {
-    timeZoneSelect.value = "UTC"; // Default fallback time zone
-  }
 
-  // Validate date and calculate half-birthday
-  function calculateHalfBirthday() {
-    const month = parseInt(monthSelect.value, 10);
-    const day = parseInt(daySelect.value, 10);
+// Call this function when the page loads
+window.addEventListener('DOMContentLoaded', (event) => {
+    populateTimeZones();
+});
 
-    // Check if the selected date is valid
-    const isValidDate = (month, day) => {
-      const testDate = new Date(2025, month - 1, day); // Use a fixed year for validation
-      return testDate.getMonth() === month - 1 && testDate.getDate() === day;
-    };
 
-    if (!isValidDate(month, day)) {
-      errorMessage.textContent = "Invalid date. Please select a valid day for the chosen month.";
-      halfBirthdayInput.value = "";
-      return;
-    }
+function calculateHalfBirthday(birthdayMonth, birthdayDay) {
+    // Get current date
+    let today = new Date();
+    let currentYear = today.getFullYear();
 
-    errorMessage.textContent = ""; // Clear any previous error messages
+    // Create birthday date object for the current year
+    let birthdayThisYear = new Date(currentYear, birthdayMonth - 1, birthdayDay);
 
     // Calculate half-birthday
-    const today = new Date();
-    const currentYear = today.getFullYear();
-    const birthdayThisYear = new Date(currentYear, month - 1, day);
-    const halfBirthday = new Date(birthdayThisYear);
-
-    // Add 6 months to calculate half-birthday
+    let halfBirthday = new Date(birthdayThisYear);
     halfBirthday.setMonth(halfBirthday.getMonth() + 6);
 
-    // Handle month overflow (e.g., adding 6 months to August 31)
-    if (halfBirthday.getDate() !== birthdayThisYear.getDate()) {
-      halfBirthday.setDate(0); // Set to the last valid day of the month
-    }
-
-    // If the half-birthday has already passed, calculate for next year
+    // Adjust year if half-birthday is in the next year
     if (halfBirthday < today) {
-      halfBirthday.setFullYear(currentYear + 1);
+        halfBirthday.setFullYear(currentYear + 1);
     }
 
-    // Format the half-birthday date
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedHalfBirthday = halfBirthday.toLocaleDateString(undefined, options);
+    return halfBirthday;
+}
 
-    // Populate the half-birthday field
-    halfBirthdayInput.value = formattedHalfBirthday;
-  }
+function showForm() {
+    document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
+}
 
-  // Add event listeners
-  monthSelect.addEventListener("change", calculateHalfBirthday);
-  daySelect.addEventListener("change", calculateHalfBirthday);
+
+document.getElementById('halfBirthdayForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    let recipientName = document.getElementById('recipientName').value;
+    let recipientEmail = document.getElementById('recipientEmail').value;
+    let recipientTimeZone = document.getElementById('recipientTimeZone').value;
+    let birthdayMonth = parseInt(document.getElementById('birthdayMonth').value);
+    let birthdayDay = parseInt(document.getElementById('birthdayDay').value);
+
+    // Calculate half-birthday
+    let halfBirthday = calculateHalfBirthday(birthdayMonth, birthdayDay);
+
+    // Format half-birthday as MM/DD/YYYY
+    let formattedHalfBirthday = (halfBirthday.getMonth() + 1).toString().padStart(2, '0') + '/' +
+        halfBirthday.getDate().toString().padStart(2, '0') + '/' +
+        halfBirthday.getFullYear();
+
+    // Update the read-only half-birthday field
+    document.getElementById('halfBirthdayDate').value = formattedHalfBirthday;
+
+    // For demonstration, just log the form data and half-birthday
+    console.log('Recipient Name:', recipientName);
+    console.log('Recipient Email:', recipientEmail);
+    console.log('Recipient Time Zone:', recipientTimeZone);
+    console.log('Half Birthday:', formattedHalfBirthday);
+
+    // In a real application, you would submit this data to your backend/Netlify forms
 });
