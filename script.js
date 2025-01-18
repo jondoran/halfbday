@@ -1,89 +1,64 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const monthSelect = document.getElementById("recipient-month");
-  const daySelect = document.getElementById("recipient-day");
-  const halfBirthdayInput = document.getElementById("half-birthday");
-  const timeZoneSelect = document.getElementById("timezone");
-  const errorMessage = document.getElementById("date-error");
+function scrollToForm() {
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+}
 
-  // Populate month and day dropdowns
-  for (let i = 1; i <= 12; i++) {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = new Date(0, i - 1).toLocaleString("default", { month: "long" });
-    monthSelect.appendChild(option);
-  }
+function populateTimezones() {
+    const timezoneSelect = document.getElementById('recipient-timezone');
+    const timezones = Intl.supportedValuesOf('timeZone');
 
-  for (let i = 1; i <= 31; i++) {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = i;
-    daySelect.appendChild(option);
-  }
+    // Attempt to autodetect the user's timezone
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  // Populate time zone dropdown dynamically
-  const timeZones = Intl.supportedValuesOf("timeZone");
-  timeZones.forEach((zone) => {
-    const option = document.createElement("option");
-    option.value = zone;
-    option.textContent = zone.replace("_", " "); // Replace underscores with spaces for readability
-    timeZoneSelect.appendChild(option);
-  });
+    timezones.forEach(timezone => {
+        const option = document.createElement('option');
+        option.value = timezone;
+        option.text = timezone;
 
-  // Auto-detect user's time zone and pre-select it
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  if (timeZones.includes(userTimeZone)) {
-    timeZoneSelect.value = userTimeZone;
-  } else {
-    timeZoneSelect.value = "UTC"; // Default fallback time zone
-  }
+        // Set the autodetected timezone as the default selected option
+        if (timezone === userTimezone) {
+            option.selected = true;
+        }
 
-  // Validate date and calculate half-birthday
-  function calculateHalfBirthday() {
-    const month = parseInt(monthSelect.value, 10);
-    const day = parseInt(daySelect.value, 10);
+        timezoneSelect.appendChild(option);
+    });
+}
 
-    // Check if the selected date is valid
-    const isValidDate = (month, day) => {
-      const testDate = new Date(2025, month - 1, day); // Use a fixed year for validation
-      return testDate.getMonth() === month - 1 && testDate.getDate() === day;
-    };
+function calculateHalfBirthday() {
+    const birthdayInput = document.getElementById('recipient-birthday');
+    const halfBirthdayInput = document.getElementById('half-birthday-date');
 
-    if (!isValidDate(month, day)) {
-      errorMessage.textContent = "Invalid date. Please select a valid day for the chosen month.";
-      halfBirthdayInput.value = "";
-      return;
-    }
+    birthdayInput.addEventListener('change', () => {
+        const birthdayDate = birthdayInput.value;
+        if (birthdayDate) {
+            try {
+                const [month, day] = birthdayDate.split('/').map(Number);
+                let halfBirthday = new Date(new Date().getFullYear(), month - 1 + 6, day); // Add 6 months
 
-    errorMessage.textContent = ""; // Clear any previous error messages
+                // Adjust the year if the half-birthday is in the next year
+                if (halfBirthday < new Date()) {
+                    halfBirthday.setFullYear(halfBirthday.getFullYear() + 1);
+                }
 
-    // Calculate half-birthday
-    const today = new Date();
-    const currentYear = today.getFullYear();
-    const birthdayThisYear = new Date(currentYear, month - 1, day);
-    const halfBirthday = new Date(birthdayThisYear);
+                const formattedHalfBirthday = halfBirthday.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
+                halfBirthdayInput.value = formattedHalfBirthday;
+            } catch (error) {
+                halfBirthdayInput.value = 'Invalid date format';
+            }
+        } else {
+            halfBirthdayInput.value = '';
+        }
+    });
+}
 
-    // Add 6 months to calculate half-birthday
-    halfBirthday.setMonth(halfBirthday.getMonth() + 6);
 
-    // Handle month overflow (e.g., adding 6 months to August 31)
-    if (halfBirthday.getDate() !== birthdayThisYear.getDate()) {
-      halfBirthday.setDate(0); // Set to the last valid day of the month
-    }
+function showPrivacyPolicy() {
+    document.getElementById('privacy-policy').style.display = 'block';
+}
 
-    // If the half-birthday has already passed, calculate for next year
-    if (halfBirthday < today) {
-      halfBirthday.setFullYear(currentYear + 1);
-    }
+function hidePrivacyPolicy() {
+    document.getElementById('privacy-policy').style.display = 'none';
+}
 
-    // Format the half-birthday date
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedHalfBirthday = halfBirthday.toLocaleDateString(undefined, options);
 
-    // Populate the half-birthday field
-    halfBirthdayInput.value = formattedHalfBirthday;
-  }
-
-  // Add event listeners
-  monthSelect.addEventListener("change", calculateHalfBirthday);
-  daySelect.addEventListener("change", calculateHalfBirthday);
-});
+populateTimezones();
+calculateHalfBirthday();
