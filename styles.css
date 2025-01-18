@@ -1,62 +1,60 @@
 /* General Reset */
 body {
-    background: linear-gradient(135deg, #f9f9f9, #e3f2fd); /* Gradient background */
-    font-family: 'Rubik', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    position: relative;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+  background: linear-gradient(135deg, #f9f9f9, #e3f2fd); /* Gradient background */
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #form {
-        padding: 15px; /* Reduce padding */
-    }
-
-    form button {
-        font-size: 0.9rem; /* Adjust button size */
-    }
-
-    h1, h2 {
-        font-size: 1.8rem; /* Reduce headline size */
-    }
+  #form {
+    padding: 15px; /* Reduce padding */
+  }
+  form button {
+    font-size: 0.9rem; /* Adjust button size */
+  }
+  h1, h2 {
+    font-size: 1.8rem; /* Reduce headline size */
+  }
 }
 
 /* Apply Nunito to headlines */
 h1, h2, h3 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700; /* Bold weight for headlines */
-    font-size: 2.8rem; /* Oversized font size for main headlines */
-    letter-spacing: 0.5px; /* Subtle spacing */
-    color: #333; /* Adjust color as needed */
-    margin-bottom: 10px;
-    line-height: 1.3; /* Adjust line height for better spacing */
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700; /* Bold weight for headlines */
+  font-size: 2.8rem; /* Oversized font size for main headlines */
+  letter-spacing: 0.5px; /* Subtle spacing */
+  color: #333; /* Adjust color as needed */
+  margin-bottom: 10px;
+  line-height: 1.3; /* Adjust line height for better spacing */
 }
 
 /* Apply Rubik to body text */
 body {
-    font-family: 'Rubik', sans-serif;
-    color: #444; /* Adjust color as needed */
-    line-height: 1.6;
+  font-family: 'Rubik', sans-serif;
+  color: #444; /* Adjust color as needed */
+  line-height: 1.6;
 }
 
 /* Optional: Style buttons or call-to-action elements */
 button {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500; /* Use a slightly bolder weight for buttons */
-    background-color: #4CAF50; /* Example button color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500; /* Use a slightly bolder weight for buttons */
+  background-color: #4CAF50; /* Example button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* Hero Section */
@@ -126,280 +124,206 @@ header {
 
 /* Song Section Styling */
 #song {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 /* Song Content Layout */
 .song-content {
-    display: flex;
-    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; /* Add spacing between columns */
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Add spacing between columns */
+  margin-top: 20px;
 }
 
 /* Player Column */
 .song-player {
-    flex: 1; /* Take up equal space */
-    min-width: 300px; /* Ensure the player has enough space */
-    text-align: center; /* Center-align the player */
+  flex: 1; /* Take up equal space */
+  min-width: 300px; /* Ensure the player has enough space */
+  text-align: center; /* Center-align the player */
 }
 
 /* CTA Column */
 .song-cta {
-    flex: 1; /* Take up equal space */
-    min-width: 300px; /* Ensure the CTA has enough space */
-    text-align: left; /* Align text to the left for better readability */
+  flex: 1; /* Take up equal space */
+  min-width: 300px; /* Ensure the CTA has enough space */
+  text-align: left; /* Align text to the left for better readability */
 }
 
 .song-cta h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.8rem;
-    color: #4CAF50;
-    margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.8rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
 }
 
 .song-cta p {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 /* Responsive Design: Mobile Layout */
 @media (max-width: 768px) {
-    .song-content {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center; /* Center-align content on mobile */
-    }
-
-    .song-cta {
-        text-align: center; /* Center-align CTA text */
-    }
-}
-
-
-/* Form Section Styling */
-#form {
-    background-color: #ffffff; /* White background for a clean look */
-    padding: 30px; /* Add padding inside the form container */
-    border-radius: 10px; /* Rounded corners for a modern feel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 800px; /* Wider form on desktop */
-    margin: 20px auto; /* Center the form horizontally */
-    text-align: center; /* Center-align text inside the form */
+  .song-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align content on mobile */
+  }
+  .song-cta {
+    text-align: center; /* Center-align CTA text */
+  }
 }
 
 /* Form Section Styling */
 #form {
-    background-color: #ffffff; /* White background for a clean look */
-    padding: 30px; /* Add padding inside the form container */
-    border-radius: 10px; /* Rounded corners for a modern feel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 1000px; /* Wider form on desktop */
-    margin: 20px auto; /* Center the form horizontally */
-    text-align: center; /* Center-align text inside the form */
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 30px; /* Add padding inside the form container */
+  border-radius: 10px; /* Rounded corners for a modern feel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 800px; /* Wider form on desktop */
+  margin: 20px auto; /* Center the form horizontally */
+  text-align: center; /* Center-align text inside the form */
 }
 
 #form h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 2rem;
-    color: #4CAF50; /* Use a bold, modern color */
-    margin-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  color: #4CAF50; /* Use a bold, modern color */
+  margin-bottom: 20px;
 }
 
 /* Form Grid Layout */
 form {
-    display: grid;
-    grid-template-columns: 1fr; /* Single-column layout by default */
-    gap: 20px; /* Add spacing between rows */
+  display: grid;
+  grid-template-columns: 1fr; /* Single-column layout by default */
+  gap: 20px; /* Add spacing between rows */
 }
 
 .form-column {
-    display: flex;
-    flex-direction: column; /* Stack inputs vertically */
-    gap: 15px; /* Add spacing between inputs */
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 15px; /* Add spacing between inputs */
 }
 
 .birthday-select {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-/* Ensure all form fields in the same row have consistent alignment and width */
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem; /* Add consistent spacing between fields */
-}
-
-.form-row input,
-.form-row select {
-  flex: 1; /* Ensure all input fields take up equal space */
-  min-width: 0; /* Prevent fields from overflowing */
-}
-
-.form-row label {
-  flex: 0 0 auto; /* Ensure labels do not stretch */
-  margin-right: 0.5rem; /* Add consistent spacing between labels and fields */
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 /* Submit Button Styling */
 .form-submit {
-    grid-column: span 3; /* Make the submit button span all columns */
-    text-align: center;
+  grid-column: span 3; /* Make the submit button span all columns */
+  text-align: center;
 }
 
 form button {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none;
-    padding: 12px 20px; /* Add padding inside the button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
-    width: 100%; /* Full-width button */
-    max-width: 300px; /* Limit button width */
-    margin: 0 auto; /* Center the button */
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 20px; /* Add padding inside the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  width: 100%; /* Full-width button */
+  max-width: 300px; /* Limit button width */
+  margin: 0 auto; /* Center the button */
 }
 
 form button:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #45a049; /* Slightly darker green on hover */
 }
 
 /* Responsive Design: Desktop Layout */
 @media (min-width: 768px) {
-    form {
-        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-        gap: 30px; /* Add spacing between columns */
-        align-items: start; /* Align items at the top */
-    }
-
-    .form-submit {
-        grid-column: span 3; /* Submit button spans all three columns */
-    }
+  form {
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 30px; /* Add spacing between columns */
+    align-items: start; /* Align items at the top */
+  }
+  .form-submit {
+    grid-column: span 3; /* Submit button spans all three columns */
+  }
 }
 
 /* Responsive Design: Mobile Layout */
 @media (max-width: 768px) {
-    form {
-        grid-template-columns: 1fr; /* Single-column layout on smaller screens */
-    }
+  form {
+    grid-template-columns: 1fr; /* Single-column layout on smaller screens */
+  }
 }
-
 
 /* Label Styling */
 form label {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 5px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 /* Time Zone Label Adjustment for Desktop */
 @media (min-width: 768px) {
-    #timezone {
-        display: block;
-        margin-top: 10px;
-    }
-
-    label[for="timezone"] {
-        display: block;
-        margin-bottom: 5px;
-    }
+  #timezone, #recipient-timezone {
+    display: block;
+    margin-top: 10px;
+  }
+  label[for="timezone"], label[for="recipient-timezone"] {
+    display: block;
+    margin-bottom: 5px;
+  }
 }
 
 /* Input Field Styling */
 form input, form select {
-    width: 100%; /* Full width for inputs */
-    padding: 10px; /* Add padding inside inputs */
-    margin-bottom: 20px; /* Add space between inputs */
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 5px; /* Rounded corners */
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-    transition: border-color 0.3s ease; /* Smooth transition for focus */
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Add padding inside inputs */
+  margin-bottom: 20px; /* Add space between inputs */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  transition: border-color 0.3s ease; /* Smooth transition for focus */
 }
 
-.birthday-select {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-
-/* Input Focus Styling */
 form input:focus, form select:focus {
-    border-color: #4CAF50; /* Highlight border on focus */
-    outline: none; /* Remove default outline */
-}
-
-/* Button Styling */
-form button {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none;
-    padding: 12px 20px; /* Add padding inside the button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
-    width: 100%; /* Full-width button */
-    max-width: 300px; /* Limit button width */
-    margin: 0 auto; /* Center the button */
-}
-
-/* Button Hover Effect */
-form button:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
+  border-color: #4CAF50; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #f1f1f1; /* Lighter text color for better contrast */
-    font-size: 0.9em;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #f1f1f1; /* Lighter text color for better contrast */
+  font-size: 0.9em;
 }
 
 footer a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4CAF50;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
