@@ -116,7 +116,7 @@ input, select {
 
 button {
     background-color: #90ee90;
-    color: white;
+    color: #333; /* Changed text color to dark gray */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
