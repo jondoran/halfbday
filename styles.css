@@ -1,16 +1,16 @@
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
     margin: 0;
-    padding: 0;
+    background-color: #f4f4f4; /* Light gray background for the entire page */
+    color: #333;
 }
 
 header {
+    background-color: #fff;
+    padding: 40px 0;
     text-align: center;
-    padding: 20px 0;
-    background-color: #fff; /* White background for header */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
 }
 
 h1 {
@@ -35,6 +35,26 @@ section {
     margin-bottom: 20px;
 }
 
+/* Alternating background colors for sections */
+#song {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+#features {
+    background-color: #f8f8f8; /* Slightly darker gray */
+    padding: 40px 0;
+}
+
+#form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Add some spacing below the form */
+}
+
+/* Song section */
 #song .column {
     align-self: center; /* Vertically center content in song section */
 }
@@ -43,6 +63,7 @@ section {
     text-align: center;
 }
 
+/* Features section */
 #features h2 {
     text-align: center; /* Center the headline */
     margin-bottom: 20px;
@@ -65,6 +86,7 @@ section {
     fill: #90ee90; /* Lime green for icons */
 }
 
+/* Form section */
 #form {
     background-color: #fff;
     padding: 40px;
@@ -100,10 +122,11 @@ button:hover {
     background-color: #70c970; /* Slightly darker green on hover */
 }
 
+/* Footer section */
 footer {
-    text-align: center;
+    background-color: #f0f0f0; /* Even darker gray for the footer */
     padding: 20px 0;
-    background-color: #eee;
+    text-align: center;
 }
 
 /* Modal styles */
