@@ -28,36 +28,45 @@ body {
 }
 
 /* Features Section */
-#features {
-  padding: 20px;
+.features-section {
   text-align: center;
-  background-color: #fff;
+  padding: 50px 20px;
+  background-color: #f0f8ff;
 }
 
-#features h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-.feature-list {
+.features-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .feature {
+  flex: 1;
   max-width: 300px;
-  margin: 20px;
   text-align: center;
+  padding: 20px;
 }
 
-.feature svg {
+.feature-icon {
+  width: 80px;
+  height: 80px;
   margin-bottom: 15px;
 }
 
 .feature h3 {
-  font-size: 1.3em;
+  font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Song Section Styling */
