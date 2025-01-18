@@ -9,7 +9,7 @@ body {
 
 header {
     background-color: #f0f0f0;
-    padding: 1em 0;
+    padding: 1.8em 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
 }
