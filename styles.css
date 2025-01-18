@@ -186,31 +186,27 @@ header {
   padding: 30px; /* Add padding inside the form container */
   border-radius: 10px; /* Rounded corners for a modern feel */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  max-width: 800px; /* Wider form on desktop */
+  max-width: 800px; /* Limit the form width */
   margin: 20px auto; /* Center the form horizontally */
   text-align: center; /* Center-align text inside the form */
-}
-
-#form h2 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 2rem;
-  color: #4CAF50; /* Use a bold, modern color */
-  margin-bottom: 20px;
 }
 
 /* Form Grid Layout */
 form {
   display: grid;
-  grid-template-columns: 1fr; /* Single-column layout by default */
-  gap: 20px; /* Add spacing between rows */
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px; /* Add spacing between columns and rows */
+  align-items: start; /* Align items at the top */
 }
 
+/* Form Column Styling */
 .form-column {
   display: flex;
   flex-direction: column; /* Stack inputs vertically */
   gap: 15px; /* Add spacing between inputs */
 }
 
+/* Birthday Select Styling */
 .birthday-select {
   display: flex;
   gap: 10px;
@@ -218,6 +214,7 @@ form {
   margin-bottom: 10px;
 }
 
+/* Error Message Styling */
 .error-message {
   color: red;
   font-size: 0.9rem;
@@ -252,24 +249,16 @@ form button:hover {
   background-color: #45a049; /* Slightly darker green on hover */
 }
 
-/* Responsive Design: Desktop Layout */
-@media (min-width: 768px) {
-  form {
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 30px; /* Add spacing between columns */
-    align-items: start; /* Align items at the top */
-  }
-  .form-submit {
-    grid-column: span 3; /* Submit button spans all three columns */
-  }
-}
-
 /* Responsive Design: Mobile Layout */
 @media (max-width: 768px) {
   form {
     grid-template-columns: 1fr; /* Single-column layout on smaller screens */
   }
+  .form-submit {
+    grid-column: span 1; /* Submit button spans one column */
+  }
 }
+
 
 /* Label Styling */
 form label {
