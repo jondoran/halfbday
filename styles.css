@@ -124,6 +124,7 @@ header {
   margin-bottom: 10px;
 }
 
+/* Song Section Styling */
 #song {
     text-align: center;
     background-color: #f9f9f9;
@@ -146,6 +147,57 @@ header {
     color: #555;
     margin-bottom: 20px;
 }
+
+/* Song Content Layout */
+.song-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Add spacing between columns */
+    margin-top: 20px;
+}
+
+/* Player Column */
+.song-player {
+    flex: 1; /* Take up equal space */
+    min-width: 300px; /* Ensure the player has enough space */
+    text-align: center; /* Center-align the player */
+}
+
+/* CTA Column */
+.song-cta {
+    flex: 1; /* Take up equal space */
+    min-width: 300px; /* Ensure the CTA has enough space */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.song-cta h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.song-cta p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design: Mobile Layout */
+@media (max-width: 768px) {
+    .song-content {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center-align content on mobile */
+    }
+
+    .song-cta {
+        text-align: center; /* Center-align CTA text */
+    }
+}
+
 
 /* Form Section Styling */
 #form {
