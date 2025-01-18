@@ -127,7 +127,6 @@ input, select {
 }
 
 button {
-    font-size: 1.5em;
     background-color: #90ee90;
     color: #333; /* Changed text color to dark gray */
     padding: 12px 20px;
