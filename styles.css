@@ -126,26 +126,11 @@ header {
 
 /* Song Section Styling */
 #song {
-    text-align: center;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-}
-
-#song h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    color: #4CAF50;
-    margin-bottom: 10px;
-}
-
-#song p {
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
 }
 
 /* Song Content Layout */
@@ -172,9 +157,9 @@ header {
     text-align: left; /* Align text to the left for better readability */
 }
 
-.song-cta h3 {
+.song-cta h2 {
     font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #4CAF50;
     margin-bottom: 10px;
 }
