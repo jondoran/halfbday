@@ -90,8 +90,8 @@
     <!-- Netlify Hidden Input -->
     <input type="hidden" name="form-name" value="half-birthday-form">
 
-    <!-- Sender-Related Fields -->
-    <div class="form-group">
+    <!-- Column 1: Sender's Information -->
+    <div class="form-column">
       <label for="sender-name">Your Name:</label>
       <input type="text" id="sender-name" name="sender-name" placeholder="Enter your name" required aria-label="Your Name">
 
@@ -99,11 +99,17 @@
       <input type="email" id="sender-email" name="sender-email" placeholder="Enter your email" required aria-label="Your Email">
     </div>
 
-    <!-- Recipient-Related Fields -->
-    <div class="form-group">
+    <!-- Column 2: Recipient's Information -->
+    <div class="form-column">
       <label for="recipient-name">Recipient's Name:</label>
       <input type="text" id="recipient-name" name="recipient-name" placeholder="Enter recipient's name" required aria-label="Recipient's Name">
 
+      <label for="recipient-email">Recipient's Email:</label>
+      <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter recipient's email" required aria-label="Recipient's Email">
+    </div>
+
+    <!-- Column 3: Recipient's Birthday and Half-Birthday -->
+    <div class="form-column">
       <label for="recipient-month">Recipient's Birthday:</label>
       <div class="birthday-select">
         <select id="recipient-month" name="recipient-month" required aria-label="Recipient's Birthday Month">
@@ -115,21 +121,17 @@
       </div>
       <span id="date-error" class="error-message" aria-live="polite"></span>
 
-      <label for="half-birthday">Half-Birthday Message will be sent:</label>
+      <label for="half-birthday">Message will be sent:</label>
       <input type="text" id="half-birthday" name="half-birthday" readonly placeholder="Half-birthday will be calculated here" aria-live="polite">
     </div>
 
-    <div class="form-group">
-      <label for="timezone">Recipient's Time Zone:</label>
-      <select id="timezone" name="timezone" required>
-        <option value="" disabled selected>Select time zone</option>
-      </select>
-    </div>
-
     <!-- Submit Button -->
-    <button type="submit">Schedule Email</button>
+    <div class="form-submit">
+      <button type="submit">Schedule Email</button>
+    </div>
   </form>
 </section>
+
 </main>
 
   <!-- Footer Section -->
