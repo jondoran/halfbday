@@ -43,7 +43,18 @@ section {
     text-align: center;
 }
 
+#features h2 {
+    text-align: center; /* Center the headline */
+    margin-bottom: 20px;
+}
+
+#features .container {
+    display: flex;
+    justify-content: space-between; /* Distribute columns evenly */
+}
+
 #features .column {
+    flex-basis: calc(33.33% - 20px); /* Three equal-width columns with spacing */
     text-align: center;
 }
 
@@ -125,4 +136,14 @@ footer {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Adjust layout for smaller screens */
+    #features .container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+    #features .column {
+        flex-basis: 100%; /* Columns occupy full width */
+        margin-bottom: 20px;
+    }
 }
