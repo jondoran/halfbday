@@ -13,8 +13,12 @@ header {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2em;
 }
 
 section {
@@ -57,7 +61,7 @@ section {
 
 #features h2 {
     text-align: center; /* Center the headline */
-    margin-bottom: 20px;
+    margin-bottom: 0.5em;
 }
 
 #features .container {
