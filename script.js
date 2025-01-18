@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const daySelect = document.getElementById("recipient-day");
   const halfBirthdayInput = document.getElementById("half-birthday");
   const timeZoneSelect = document.getElementById("timezone");
-  const recipientTimeZoneSelect = document.getElementById("recipient-timezone"); // New field
   const errorMessage = document.getElementById("date-error");
 
   // Populate month and day dropdowns
@@ -13,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     option.textContent = new Date(0, i - 1).toLocaleString("default", { month: "long" });
     monthSelect.appendChild(option);
   }
+
   for (let i = 1; i <= 31; i++) {
     const option = document.createElement("option");
     option.value = i;
@@ -20,28 +20,21 @@ document.addEventListener("DOMContentLoaded", function () {
     daySelect.appendChild(option);
   }
 
-  // Populate time zone dropdowns dynamically
-  const timeZones = Intl.supportedValuesOf("timeZone"); // Get all IANA time zones
+  // Populate time zone dropdown dynamically
+  const timeZones = Intl.supportedValuesOf("timeZone");
   timeZones.forEach((zone) => {
-    const option1 = document.createElement("option");
-    option1.value = zone;
-    option1.textContent = zone.replace("_", " "); // Replace underscores with spaces for readability
-    timeZoneSelect.appendChild(option1);
-
-    const option2 = document.createElement("option"); // For Recipient Time Zone
-    option2.value = zone;
-    option2.textContent = zone.replace("_", " ");
-    recipientTimeZoneSelect.appendChild(option2);
+    const option = document.createElement("option");
+    option.value = zone;
+    option.textContent = zone.replace("_", " "); // Replace underscores with spaces for readability
+    timeZoneSelect.appendChild(option);
   });
 
   // Auto-detect user's time zone and pre-select it
   const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   if (timeZones.includes(userTimeZone)) {
     timeZoneSelect.value = userTimeZone;
-    recipientTimeZoneSelect.value = userTimeZone; // Pre-select for Recipient Time Zone
   } else {
     timeZoneSelect.value = "UTC"; // Default fallback time zone
-    recipientTimeZoneSelect.value = "UTC"; // Default fallback for Recipient Time Zone
   }
 
   // Validate date and calculate half-birthday
